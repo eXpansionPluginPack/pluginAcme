@@ -55,7 +55,8 @@ class Acme extends BasicPlugin
          *
          * @see sayHello
          */
-        $this->registerChatCommand('hello', "sayHello", -1, true);
+
+        $this->registerChatCommand('hello_acme', "sayHello", -1, true);
     }
 
     /**
@@ -88,45 +89,45 @@ class Acme extends BasicPlugin
              * @see https://github.com/eXpansionPluginPack/eXpansion/wiki/Developpers-:-i18n-support
              */
             $this->exp_chatSendServerMessage('Hello %1$s', null, array($this->config->who));
-        }
 
-        // Break the params into multiple parts.
-        $args = explode(' ', $params);
+        } else {
 
-        // We are sending one message to each player
-        foreach ($args as $playerLogin) {
+            // Break the params into multiple parts.
+            $args = explode(' ', $params);
 
-            // Check if the player exists.
-            $player = $this->storage->getPlayerObject($playerLogin);
+            // We are sending one message to each player
+            foreach ($args as $playerLogin) {
+                // Check if the player exists.
+                $player = $this->storage->getPlayerObject($playerLogin);
 
-            if (!is_null($player)) {
-                /**
-                 * The player exist. We will use the same method as before. But this time we send it to the player
-                 * so not to "null" and we use the player nickname instead of the configuration value.
-                 */
-                $this->exp_chatSendServerMessage('Hello %1$s', $playerLogin, array($player->nickName));
+                if (!is_null($player)) {
+                    /**
+                     * The player exist. We will use the same method as before. But this time we send it to the player
+                     * so not to "null" and we use the player nickname instead of the configuration value.
+                     */
+                    $this->exp_chatSendServerMessage('Hello %1$s', $playerLogin, array($player->nickName));
 
-            } else {
-                /**
-                 * The player can't be found, we need to send an error to the user that used the chat command.
-                 * Have you noticed how dull our messages has been? So this code will work it won't look nice.
-                 * We need to add some color.
-                 */
-                //$this->exp_chatSendServerMessage('Player %1$s isn\'t on the server. Can\'t say hello', $login, array($playerLogin));
+                } else {
+                    /**
+                     * The player can't be found, we need to send an error to the user that used the chat command.
+                     * Have you noticed how dull our messages has been? So this code will work it won't look nice.
+                     * We need to add some color.
+                     */
+                    //$this->exp_chatSendServerMessage('Player %1$s isn\'t on the server. Can\'t say hello', $login, array($playerLogin));
 
-                /**
-                 * For that we won't use color codes but some different tokens, that starts and end with #
-                 * We are using #error# which is basically red text & #variable# that is white to differentiate the
-                 * login of the non existing player.
-                 *
-                 * All color codes are defined here :
-                 * @see ManiaLivePlugins\eXpansion\Core\Config
-                 * They are prefixed by Colors_ and can be configured in game. Check the wiki for more information :
-                 * @see https://github.com/eXpansionPluginPack/eXpansion/wiki/Developpers-:-Chat-Colors
-                 */
-                $this->exp_chatSendServerMessage('#error#Player #variable#%1$s #error#isn\'t on the server. Can\'t say hello', $login, array($playerLogin));
+                    /**
+                     * For that we won't use color codes but some different tokens, that starts and end with #
+                     * We are using #error# which is basically red text & #variable# that is white to differentiate the
+                     * login of the non existing player.
+                     *
+                     * All color codes are defined here :
+                     * @see ManiaLivePlugins\eXpansion\Core\Config
+                     * They are prefixed by Colors_ and can be configured in game. Check the wiki for more information :
+                     * @see https://github.com/eXpansionPluginPack/eXpansion/wiki/Developpers-:-Chat-Colors
+                     */
+                    $this->exp_chatSendServerMessage('#error#Player #variable#%1$s #error#isn\'t on the server. Can\'t say hello', $login, array($playerLogin));
+                }
             }
-
         }
 
     }
