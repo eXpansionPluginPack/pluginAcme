@@ -1,0 +1,31 @@
+{
+    "name": "ml-expansion/expansion-acme",
+    "type": "library",
+    "description": "Demo plugin for eXpansion plugin ",
+    "keywords": ["maniaplanet", "shootmania", "trackmania", "application", "manialive", "next gen controller"],
+    "homepage": "https://github.com/eXpansionPluginPack/pluginAcme",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Reaby",
+            "email": "petri.jarvisalo@gmail.com"
+        },
+        {
+            "name": "Oliverde8",
+            "email": "oliverde8@tm-teams.com",
+            "homepage": "http://www.oliver-decramer.com"
+        }
+    ],
+    "support": {
+        "forum": "https://github.com/eXpansionPluginPack/eXpansion"
+    },
+    "require": {
+        "php": ">=5.4",
+        "ml-expansion/expansion": ">=0.9.8.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ManiaLivePlugins\\eXpansion\\Acme\\": "."
+        }
+    }
+}
