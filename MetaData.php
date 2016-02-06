@@ -3,7 +3,7 @@
 namespace ManiaLivePlugins\eXpansion\Acme;
 
 
-use ManiaLivePlugins\eXpansion\Core\types\config\types\String;
+use ManiaLivePlugins\eXpansion\Core\types\config\types\TypeString;
 
 /**
  * Description of MetaData
@@ -27,7 +27,7 @@ class MetaData extends \ManiaLivePlugins\eXpansion\Core\types\config\MetaData
 		/* Create a new variable. "who" is the name of the variable in the config class, and the second parameter
 		 * the name to display in the front.
 		 */
-		$var = new String("who", "Who do we great hello to?", $config);
+		$var = new TypeString("who", "Who do we great hello to?", $config);
 		// Description of this variable. We use a dummy description.
 		$var->setDescription("Dummy description");
 		// Default value used to reset the setting.
