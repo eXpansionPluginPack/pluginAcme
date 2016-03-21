@@ -1,0 +1,6 @@
+declare Real tick = Now/(250 * speedMultiplier);
+Quad_Ball1.RelativePosition = getBallCoords(ballRadius, ballCenterCoord,   tick);
+Quad_Ball2.RelativePosition = getBallCoords(ballRadius, ballCenterCoord,   tick-90);
+Quad_Ball3.RelativePosition = getBallCoords(ballRadius, ballCenterCoord,   tick-180);
+
+ballCenterCoord = <MouseX, MouseY>;

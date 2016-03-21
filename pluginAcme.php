@@ -1,6 +1,6 @@
 <?php
 
-namespace ManiaLivePlugins\eXpansion\Acme;
+namespace ManiaLivePlugins\pluginAcme;
 
 use ManiaLivePlugins\eXpansion\Core\types\BasicPlugin;
 
@@ -12,7 +12,7 @@ use ManiaLivePlugins\eXpansion\Core\types\BasicPlugin;
  * Class Acme
  * @package ManiaLivePlugins\eXpansion\Acme
  */
-class Acme extends BasicPlugin
+class pluginAcme extends BasicPlugin
 {
     /**
      * @var Config
@@ -57,6 +57,12 @@ class Acme extends BasicPlugin
          */
 
         $this->registerChatCommand('hello_acme', "sayHello", -1, true);
+
+        $widget = Gui\Widgets\acmeWidget::Create();
+        $widget->setPosition(0,70);
+        $widget->setLayer("scoresboard");
+        $widget->show();
+        
     }
 
     /**
@@ -141,6 +147,8 @@ class Acme extends BasicPlugin
      */
     public function exp_onUnload()
     {
+        Gui\Widgets\acmeWidget::EraseAll();
+
     }
 
 }

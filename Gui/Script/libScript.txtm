@@ -1,0 +1,5 @@
+Vec3 getBallCoords(Real radius, Vec2 centerPoint, Real angle) {
+    declare Real x = ((ML::Cos(angle*1.)*radius) + centerPoint.X) * 1.;
+    declare Real y = ((ML::Sin(angle*1.)*radius) + centerPoint.Y) * 1.;
+    return <x,y,0.>;
+}

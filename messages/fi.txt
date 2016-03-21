@@ -1,0 +1,5 @@
+Hello %1$s
+Hei %1$s
+
+Say hello by entering value
+Sano hei antamalla arvo

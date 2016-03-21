@@ -1,5 +1,5 @@
 Hello %1$s
-Bonjour %1$s
+Hallo %1$s
 
 Say hello by entering value
 #translate#Say hello by entering value

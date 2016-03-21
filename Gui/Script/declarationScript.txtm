@@ -1,0 +1,3 @@
+declare Real ballRadius;
+declare Vec2 ballCenterCoord;
+declare Real speedMultiplier;

@@ -1,0 +1,6 @@
+declare Quad_Ball1 = (Page.GetFirstChild("ball1") as CMlQuad);
+declare Quad_Ball2 = (Page.GetFirstChild("ball2") as CMlQuad);
+declare Quad_Ball3 = (Page.GetFirstChild("ball3") as CMlQuad);
+ballRadius = 10.;
+ballCenterCoord = <0., 0.>;
+speedMultiplier = 1.;
