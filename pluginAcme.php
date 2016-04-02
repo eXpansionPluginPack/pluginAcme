@@ -58,11 +58,23 @@ class pluginAcme extends BasicPlugin
 
         $this->registerChatCommand('hello_acme', "sayHello", -1, true);
 
+        // We will also send a widget to all players.
+        //First we need to create our Acme Widget. We use the static method Create of our window for that.
         $widget = Gui\Widgets\acmeWidget::Create();
+        // We also need to set a position, to display it at.
         $widget->setPosition(0,70);
-        $widget->setLayer("scoresboard");
+        /*
+         * Finally we will show it. We have not precised to whom we are showing the widget, we show it to 'null'
+         * that means it is going to be sent to everyone without exception
+         */
         $widget->show();
-        
+        /*
+         * If we wished to send it to a specific player we should have passed in parameter the login of the player :
+         * $widget->show('player_login');
+         *
+         * We can also send it to multiple players at the same time using an array
+         * $widget->show(array('player_login', 'player_login2');
+         */
     }
 
     /**
